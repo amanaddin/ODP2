@@ -12,8 +12,9 @@ public class TextDocumentBuilder implements DocumentBuilder {
 	}
 
 	@Override
-	public void addElement(DocumentElement element) {
+	public DocumentBuilder addElement(DocumentElement element) {
 		document.addElement(element);
+		return this;
 	}
 
 	@Override

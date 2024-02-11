@@ -28,7 +28,7 @@ public class Client {
 	            index++;
 	            System.out.println();
 	        } else if (index == 1) {
-	            doc.updateElement(element, new Paragraph("\n  this is updated paragraph \n"));
+	            doc.updateElement(element, new Paragraph("Paragraph:\n  this is updated paragraph \n"));
 	            index++;
 	        }
 	    }
@@ -38,6 +38,14 @@ public class Client {
 	    System.out.println("|--------------------------------------------------------------------------------|");
 	    System.out.println();
 	    doc.render();
+	    
+	    
+	    Document brevMall = director.constructLetterTemplate(documentFacade);
+	    brevMall.render();
+	    
+	    Document calendarMall = director.constructCalendarTemplate(documentFacade);
+	    calendarMall.render();
+	    
 	}
 
 

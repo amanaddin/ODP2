@@ -35,9 +35,9 @@ public class DocumentList implements DocumentElement {
 		StringBuilder result = new StringBuilder();
 		result.append(this.contetn);
 		for (DocumentElement element : elements) {
-			result.append("\n" + "  "+ element.getContent()).append("\n");
+			result.append("\n" + element.getContent()).append("\n");
 		}
-		return "List: " + result.toString();
+		return result.toString();
 	}
 
 }

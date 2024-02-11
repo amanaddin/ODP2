@@ -12,7 +12,7 @@ public class Heading implements DocumentElement {
 
 	@Override
 	public String getContent() {
-		return "Heading: " + content;
+		return content;
 	}
 
 }

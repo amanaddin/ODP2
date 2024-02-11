@@ -12,7 +12,7 @@ public class Paragraph implements DocumentElement {
 
 	@Override
 	public String getContent() {
-		return "Paragraph: " + content;
+		return content;
 	}
 
 }
