@@ -1,9 +1,9 @@
-package miniProjekt1.concreteDocumentElement;
+package concreteDocumentElement;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import miniProjekt1.documentElement.DocumentElement;
+import documentElement.DocumentElement;
 
 public class Table implements DocumentElement {
 	private List<List<DocumentElement>> cells;

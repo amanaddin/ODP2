@@ -1,14 +1,14 @@
-package miniProjekt1.documentBuilder;
+package documentBuilder;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import miniProjekt1.concreteDocumentElement.DocumentList;
-import miniProjekt1.concreteDocumentElement.Table;
-import miniProjekt1.document.Document;
-import miniProjekt1.documentElement.DocumentElement;
-import miniProjekt1.documentFacade.DocumentElementsAPI;
+import concreteDocumentElement.DocumentList;
+import concreteDocumentElement.Table;
+import document.Document;
+import documentElement.DocumentElement;
+import documentFacade.DocumentElementsAPI;
 
 public class DocumentDirector {
 	private DocumentBuilder builder;

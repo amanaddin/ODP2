@@ -1,7 +1,7 @@
-package miniProjekt1.documentBuilder;
+package documentBuilder;
 
-import miniProjekt1.document.Document;
-import miniProjekt1.documentElement.DocumentElement;
+import document.Document;
+import documentElement.DocumentElement;
 
 public interface DocumentBuilder {
 	DocumentBuilder addElement(DocumentElement element);

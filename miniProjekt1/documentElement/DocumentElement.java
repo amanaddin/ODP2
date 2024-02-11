@@ -1,4 +1,4 @@
-package miniProjekt1.documentElement;
+package documentElement;
 
 public interface DocumentElement {
 	String getContent();

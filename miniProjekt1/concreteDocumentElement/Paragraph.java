@@ -1,6 +1,6 @@
-package miniProjekt1.concreteDocumentElement;
+package concreteDocumentElement;
 
-import miniProjekt1.documentElement.DocumentElement;
+import documentElement.DocumentElement;
 
 public class Paragraph implements DocumentElement {
 

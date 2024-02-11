@@ -1,8 +1,8 @@
-package miniProjekt1.documentBuilder;
+package documentBuilder;
 
-import miniProjekt1.concreteDocument.TextDocument;
-import miniProjekt1.document.Document;
-import miniProjekt1.documentElement.DocumentElement;
+import concreteDocument.TextDocument;
+import document.Document;
+import documentElement.DocumentElement;
 
 public class TextDocumentBuilder implements DocumentBuilder {
 	private Document document;

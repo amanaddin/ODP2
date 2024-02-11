@@ -1,10 +1,10 @@
-package miniProjekt1.documentFacade;
+package documentFacade;
 
-import miniProjekt1.concreteDocumentElement.Heading;
-import miniProjekt1.concreteDocumentElement.DocumentList;
-import miniProjekt1.concreteDocumentElement.Paragraph;
-import miniProjekt1.concreteDocumentElement.Table;
-import miniProjekt1.documentElement.DocumentElement;
+import concreteDocumentElement.DocumentList;
+import concreteDocumentElement.Heading;
+import concreteDocumentElement.Paragraph;
+import concreteDocumentElement.Table;
+import documentElement.DocumentElement;
 
 public class DocumentElementsAPI {
 

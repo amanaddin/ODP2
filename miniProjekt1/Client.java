@@ -1,14 +1,13 @@
-package miniProjekt1;
 
 import java.util.Iterator;
 
-import miniProjekt1.concreteDocumentElement.Paragraph;
-import miniProjekt1.document.Document;
-import miniProjekt1.documentBuilder.DocumentBuilder;
-import miniProjekt1.documentBuilder.DocumentDirector;
-import miniProjekt1.documentBuilder.TextDocumentBuilder;
-import miniProjekt1.documentElement.DocumentElement;
-import miniProjekt1.documentFacade.DocumentElementsAPI;
+import concreteDocumentElement.Paragraph;
+import document.Document;
+import documentBuilder.DocumentBuilder;
+import documentBuilder.DocumentDirector;
+import documentBuilder.TextDocumentBuilder;
+import documentElement.DocumentElement;
+import documentFacade.DocumentElementsAPI;
 
 public class Client {
 

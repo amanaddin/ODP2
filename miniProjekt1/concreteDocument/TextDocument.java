@@ -1,10 +1,10 @@
-package miniProjekt1.concreteDocument;
+package concreteDocument;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import miniProjekt1.document.Document;
-import miniProjekt1.documentElement.DocumentElement;
+import document.Document;
+import documentElement.DocumentElement;
 
 public class TextDocument implements Document {
 	private List<DocumentElement> elements;

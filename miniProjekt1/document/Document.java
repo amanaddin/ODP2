@@ -1,9 +1,9 @@
-package miniProjekt1.document;
+package document;
 
 import java.util.Iterator;
 import java.util.List;
 
-import miniProjekt1.documentElement.DocumentElement;
+import documentElement.DocumentElement;
 
 public interface Document extends Iterable<DocumentElement> {
 	void addElement(DocumentElement docElement);

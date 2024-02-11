@@ -1,9 +1,9 @@
-package miniProjekt1.concreteDocumentElement;
-
-import miniProjekt1.documentElement.DocumentElement;
+package concreteDocumentElement;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import documentElement.DocumentElement;
 
 public class DocumentList implements DocumentElement {
 
