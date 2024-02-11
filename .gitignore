@@ -3,3 +3,5 @@
 
 # Ignore generated files by Eclipse
 bin/
+*.DS_Store
+*.zip
