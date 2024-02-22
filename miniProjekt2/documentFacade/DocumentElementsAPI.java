@@ -8,15 +8,14 @@ import documentElement.DocumentElement;
 
 public class DocumentElementsAPI {
 
-	public DocumentElement createPrimitiveDocElement(String type, String content) {
-		switch (type.toLowerCase()) {
-		case "heading":
+	public DocumentElement createPrimitiveDocElement(DocElement type, String content) {
+		switch (type) {
+		case HEADING:
 			return new Heading(content);
-		case "paragraph":
+		case PARAGRAPH:
 			return new Paragraph(content);
-		default:
-			throw new IllegalArgumentException("Invalid document element type: " + type);
 		}
+		return null;
 	}
 
 	public DocumentList createListItem(String title) {

@@ -1,13 +1,13 @@
 package documentBuilder;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import concreteDocumentElement.DocumentList;
 import concreteDocumentElement.Table;
 import document.Document;
 import documentElement.DocumentElement;
+import documentFacade.DocElement;
 import documentFacade.DocumentElementsAPI;
 
 public class DocumentDirector {
@@ -20,23 +20,21 @@ public class DocumentDirector {
 	public Document construct(DocumentElementsAPI api) {
 
 		DocumentList list = getHardcodedList(api);
-		Table table = getHardcodedTable(api);
 		
-		return builder.addElement(api.createPrimitiveDocElement("heading", "Heading:\n    THIS IS THE HEADING\n"))
-				.addElement(api.createPrimitiveDocElement("paragraph", "Paragraph:\n    this is the paragraph\n"))
+		return builder.addElement(api.createPrimitiveDocElement(DocElement.HEADING, "Heading:\n    THIS IS THE HEADING\n"))
+				.addElement(api.createPrimitiveDocElement(DocElement.PARAGRAPH, "Paragraph:\n    this is the paragraph\n"))
 				.addElement(list)
-				.addElement(table)
 				.build();
 	}
 	
 
 	public Document constructLetterTemplate(DocumentElementsAPI api) {
 		DocumentList list = api.createListItem("-----------------------Title----------------------------");
-		list.addElement(api.createPrimitiveDocElement("heading", "\nname:"));
-		list.addElement(api.createPrimitiveDocElement("paragraph", "address:"));
+		list.addElement(api.createPrimitiveDocElement(DocElement.HEADING, "\nname:"));
+		list.addElement(api.createPrimitiveDocElement(DocElement.PARAGRAPH, "address:"));
 
 		return builder.addElement(list)
-				.addElement(api.createPrimitiveDocElement("paragraph",
+				.addElement(api.createPrimitiveDocElement(DocElement.PARAGRAPH,
 						"--------------------------------------------------------\n"
 								+ "--------------------------------------------------------\n"
 								+ "--------------------------------------------------------\n"
@@ -53,28 +51,11 @@ public class DocumentDirector {
 				.build();
 	}
 	
-	private Table getHardcodedTable(DocumentElementsAPI api) {
-		Table table = api.createTable("This is the table");
-		DocumentElement heading = api.createPrimitiveDocElement("heading", "Name");
-		DocumentElement heading2 = api.createPrimitiveDocElement("heading", "Age");
-
-		DocumentElement para1 = api.createPrimitiveDocElement("paragraph", "Ali");
-		DocumentElement para2 = api.createPrimitiveDocElement("paragraph", "20");
-
-		DocumentElement para3 = api.createPrimitiveDocElement("paragraph", "Anders");
-		DocumentElement para4 = api.createPrimitiveDocElement("paragraph", "40");
-
-		table.addRow(Arrays.asList(heading, heading2));
-		table.addRow(Arrays.asList(para1, para2));
-		table.addRow(Arrays.asList(para3, para4));
-		return table;
-		
-	}
 	
 	private DocumentList getHardcodedList(DocumentElementsAPI api) {
 		DocumentList list = api.createListItem("This is the listItem");
-		list.addElement(api.createPrimitiveDocElement("heading", "Heading:\n    HEADING IN THE LIST "));
-		list.addElement(api.createPrimitiveDocElement("paragraph", "Paragraph:\n    paragraph in the list"));
+		list.addElement(api.createPrimitiveDocElement(DocElement.HEADING, "Heading:\n    HEADING IN THE LIST "));
+		list.addElement(api.createPrimitiveDocElement(DocElement.PARAGRAPH, "Paragraph:\n    paragraph in the list"));
 		return list;
 	}
 
@@ -83,7 +64,7 @@ public class DocumentDirector {
 		String[] days = { "Mon", "Tis", "Wen", "Thr", "Fri", "Sat", "Sun" };
 		List<DocumentElement> headings = new ArrayList<>();
 		for (String day : days) {
-			headings.add(api.createPrimitiveDocElement("heading", day));
+			headings.add(api.createPrimitiveDocElement(DocElement.HEADING, day));
 		}
 		table.addRow(headings);
 	}
@@ -92,7 +73,7 @@ public class DocumentDirector {
 		for (int i = 0; i < 5; i++) {
 			List<DocumentElement> columns = new ArrayList<>();
 			for (int r = 0; r < 7; r++) {
-				columns.add(api.createPrimitiveDocElement("paragraph", ""));
+				columns.add(api.createPrimitiveDocElement(DocElement.PARAGRAPH, ""));
 			}
 			table.addRow(columns);
 		}

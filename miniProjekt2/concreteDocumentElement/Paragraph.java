@@ -1,6 +1,7 @@
 package concreteDocumentElement;
 
 import documentElement.DocumentElement;
+import visitor.Visitor;
 
 public class Paragraph implements DocumentElement {
 
@@ -13,6 +14,11 @@ public class Paragraph implements DocumentElement {
 	@Override
 	public String getContent() {
 		return content;
+	}
+
+	@Override
+	public String accept(Visitor visitor) {
+		return visitor.visitParagraph(this);
 	}
 
 }

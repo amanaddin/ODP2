@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import documentElement.DocumentElement;
+import visitor.Visitor;
 
 public class DocumentList implements DocumentElement {
 
@@ -38,6 +39,11 @@ public class DocumentList implements DocumentElement {
 			result.append("\n" + element.getContent()).append("\n");
 		}
 		return result.toString();
+	}
+
+	@Override
+	public String accept(Visitor visitor) {
+		return visitor.visitList(this);		
 	}
 
 }

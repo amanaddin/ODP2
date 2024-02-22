@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import documentElement.DocumentElement;
+import visitor.Visitor;
 
 public class Table implements DocumentElement {
 	private List<List<DocumentElement>> cells;
@@ -22,47 +23,31 @@ public class Table implements DocumentElement {
 		}
 		this.cells.add(row);
 	}
+	
+	public List<List<DocumentElement>> getCells(){
+		return cells;
+	}
+	 @Override
+	    public String getContent() {
+	        StringBuilder tableContent = new StringBuilder();
+	        tableContent.append(title).append("\n\n");
+
+	        if (cells.isEmpty()) {
+	            tableContent.append("No data available for the table.\n");
+	        } else {
+	            for (List<DocumentElement> row : cells) {
+	                for (DocumentElement cell : row) {
+	                    tableContent.append(cell.getContent()).append("\t");
+	                }
+	                tableContent.append("\n");
+	            }
+	        }
+	        return tableContent.toString();
+	    }
 
 	@Override
-	public String getContent() {
-		StringBuilder tableContent = new StringBuilder();
-		tableContent.append(title).append("\n\n");
-
-		if (cells.isEmpty()) {
-			tableContent.append("No data available for the table.\n");
-			return "Table: \n" + tableContent.toString();
-		}
-
-		// Calculate column widths
-		int numColumns = cells.get(0).size();
-		int[] columnWidths = new int[numColumns];
-		for (List<DocumentElement> row : cells) {
-			for (int i = 0; i < numColumns; i++) {
-				String cellContent = row.get(i).getContent();
-				columnWidths[i] = Math.max(columnWidths[i], cellContent.length());
-			}
-		}
-
-		// Draw table
-		for (List<DocumentElement> row : cells) {
-			tableContent.append("|");
-			for (int i = 0; i < numColumns; i++) {
-				String cellContent = row.get(i).getContent();
-				tableContent.append(" ").append(cellContent);
-				tableContent.append(" ".repeat(columnWidths[i] - cellContent.length()));
-				tableContent.append(" |");
-			}
-			tableContent.append("\n");
-			
-				tableContent.append("+");
-				for (int width : columnWidths) {
-					tableContent.append("-".repeat(width + 2)).append("+");
-				}
-				tableContent.append("\n");
-			
-		}
-
-		return tableContent.toString();
+	public String accept(Visitor visitor) {
+		return visitor.visitTable(this);		
 	}
 
 }
